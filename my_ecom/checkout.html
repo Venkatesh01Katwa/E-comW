@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | E-Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-content no-sidebar">
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-left"><div class="logo">E-Shop</div></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="checkout page-pad">
+        <h2>Checkout</h2>
+        <div class="checkout-container">
+          <form class="checkout-form">
+            <h3>Billing Details</h3>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Phone Number" required>
+            <input type="text" placeholder="Shipping Address" required>
+
+            <h3>Payment Method</h3>
+            <select required>
+              <option value="">Select Payment Method</option>
+              <option value="card">Credit / Debit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="cod">Cash on Delivery</option>
+            </select>
+
+            <button type="submit" class="btn primary">Place Order</button>
+          </form>
+
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            <img id="checkoutImage" src="images/product1.jpg" alt="Product" />
+            <h4 id="checkoutTitle">Sample Product</h4>
+            <p id="checkoutPrice">$0</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2025 E-Shop • Secure Checkout</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutContainer = document.querySelector(".order-summary");
+  const singleProduct = JSON.parse(localStorage.getItem("checkoutProduct"));
+  const cartProducts = JSON.parse(localStorage.getItem("checkoutCart"));
+
+  checkoutContainer.innerHTML = "<h3>Order Summary</h3>";
+
+  // If user came from Add to Cart page
+  if (cartProducts && cartProducts.length) {
+    let total = 0;
+    cartProducts.forEach(item => {
+      const priceValue = parseFloat(item.price.replace(/[^0-9.]/g, ""));
+      total += priceValue * item.qty;
+
+      checkoutContainer.innerHTML += `
+        <div class="checkout-item">
+          <img src="${item.img}" alt="${item.title}">
+          <div class="checkout-info">
+            <h4>${item.title}</h4>
+            <p>Price: ${item.price}</p>
+            <p>Qty: ${item.qty}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    checkoutContainer.innerHTML += `<h4 style="margin-top:10px;">Total: $${total.toFixed(2)}</h4>`;
+
+  // If user clicked Buy Now
+  } else if (singleProduct) {
+    checkoutContainer.innerHTML += `
+      <div class="checkout-item">
+        <img src="${singleProduct.img}" alt="${singleProduct.title}">
+        <div class="checkout-info">
+          <h4>${singleProduct.title}</h4>
+          <p>${singleProduct.price}</p>
+        </div>
+      </div>
+    `;
+  } else {
+    checkoutContainer.innerHTML += `<p>No products selected for checkout.</p>`;
+  }
+});
+</script>
+
+
+</body>
+</html>

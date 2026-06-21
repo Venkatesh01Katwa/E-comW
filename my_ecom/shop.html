@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop | E-Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="Categories">
+    <div class="sidebar-inner">
+      <div class="brand-small">E-Shop</div>
+      <hr/>
+      <h3>Categories</h3>
+      <ul class="categories">
+        <li data-category="All" class="active">All</li>
+        <li data-category="Electronics">Electronics</li>
+        <li data-category="Accessories">Accessories</li>
+        <li data-category="Fashion">Fashion</li>
+      </ul>
+
+      <div class="sidebar-help">
+        <small>Filter & find products quickly</small>
+      </div>
+    </div>
+    <button class="sidebar-close" aria-label="Close categories" onclick="toggleSidebar(false)">×</button>
+  </aside>
+
+  <div class="main-content">
+    <header class="site-header">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-left">
+          <button class="sidebar-toggle" aria-label="Open categories" onclick="toggleSidebar(true)">☰</button>
+          <div class="logo">E-Shop</div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-search">
+          <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products" />
+        </div>
+
+        <!-- 🛒 Cart icon (added here) -->
+        <div class="nav-cart">
+          <a href="addtocart.html" class="cart-link">🛒 <span id="cartCount">0</span></a>
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="products page-pad">
+        <div class="section-head">
+          <h2>Shop Products</h2>
+          <p class="muted">Browse all categories — use the sidebar to filter</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-category="Electronics">
+            <div class="media"><img src="acer_predator.webp" alt="Laptop" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Laptop</h3>
+              <p class="price">$1379</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Electronics">
+            <div class="media"><img src="CallofDuty.png" alt="CallofDuty-game" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">CallofDuty</h3>
+              <p class="price">$25</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Electronics">
+            <div class="media"><img src="cod.png" alt="CallofDuty-game" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">CallofDuty-BlackOps</h3>
+              <p class="price">$40</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Accessories">
+            <div class="media"><img src="headphone.webp" alt="Headphones" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Headphones</h3>
+              <p class="price">$99</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Fashion">
+            <div class="media"><img src="jacket1.avif" alt="Jacket" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Jacket</h3>
+              <p class="price">$149</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Electronics">
+            <div class="media"><img src="iphone.webp" alt="Smartphone" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Smart iPhone</h3>
+              <p class="price">$799</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Accessories">
+            <div class="media"><img src="headphone2.webp" alt="Headphones" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Headphones</h3>
+              <p class="price">$199</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Fashion">
+            <div class="media"><img src="sunglass.webp" alt="Sunglass" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Sunglass</h3>
+              <p class="price">$149</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Electronics">
+            <div class="media"><img src="laptop.webp" alt="Laptop" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Laptop</h3>
+              <p class="price">$699</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Fashion">
+            <div class="media">
+              <img src="jacket.webp" alt="Jacket" loading="lazy">
+            </div>
+            <div class="meta">
+              <h3 class="product-title">Jacket</h3>
+              <p class="price">$149</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Fashion">
+            <div class="media"><img src="sunglass2.jpg" alt="Sunglass" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Sunglass</h3>
+              <p class="price">$219</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Accessories">
+            <div class="media"><img src="skull_candy.png" alt="Airbuds" loading="lazy"></div>
+            <div class="meta">
+              <h3 class="product-title">Skull-Candy-AirBuds</h3>
+              <p class="price">$199</p>
+              <div class="card-actions">
+                <button class="btn small">Add to cart</button>
+                <button class="btn buy">Buy Now</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2025 E-Shop • Built with care</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Product Image">
+        <div class="modal-info">
+          <h2 id="modalTitle">Product Title</h2>
+          <p id="modalPrice">$0</p>
+          <p id="modalDescription">This is a detailed description of the product.</p>
+          <div class="modal-actions">
+            <button class="btn small">Add to Cart</button>
+            <button class="btn buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

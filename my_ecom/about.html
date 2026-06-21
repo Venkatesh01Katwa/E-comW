@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | E-Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- About page does NOT include the left sidebar -->
+  <div class="main-content no-sidebar">
+    <header class="site-header">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-left">
+          <div class="logo">E-Shop</div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-hero">
+        <h1>About Our Store</h1>
+        <p>We provide top-quality products designed to make life easier and more beautiful. Learn about our mission, values, and the people behind the brand.</p>
+      </section>
+
+      <section class="about-section">
+        <div class="about-content">
+          <div class="text">
+            <h2>High-Quality Products</h2>
+            <p>Our products are crafted with precision and care, ensuring you always get the best value. We select materials responsibly and test every product for durability and performance.</p>
+            <ul>
+              <li>Premium materials & finishes</li>
+              <li>Strict quality control</li>
+              <li>1-year limited warranty</li>
+            </ul>
+          </div>
+
+          <div class="image"><img src="cod.png" alt="High quality example" loading="lazy"></div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="about-content reverse">
+          <div class="text">
+            <h2>Customer-Centric Approach</h2>
+            <p>We put customers first — from easy ordering to fast shipping and friendly support. Your experience matters at every step.</p>
+            <p><strong>Services we offer:</strong> 24/7 support, easy returns, fast dispatch.</p>
+          </div>
+
+          <div class="image"><img src="callofduty2.png" alt="Customer service" loading="lazy"></div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="about-content">
+          <div class="text">
+            <h2>Sustainability Matters</h2>
+            <p>We're committed to minimizing our footprint: eco-friendly packaging, smarter sourcing, and energy-efficient operations.</p>
+          </div>
+
+          <div class="image"><img src="CallofDuty.png" alt="Sustainability" loading="lazy"></div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is your return policy? <span class="toggle">+</span></button>
+            <div class="faq-answer">
+              <p>We offer a 30-day return period on unused, unwashed items. Refunds are issued after we receive and inspect the product.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do you ship internationally? <span class="toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Yes — we ship worldwide. Shipping cost & delivery time depends on the destination and chosen carrier.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How do I track my order? <span class="toggle">+</span></button>
+            <div class="faq-answer">
+              <p>Once dispatched, you'll receive an email with a tracking number and tracking URL. You can also view orders in your account.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2025 E-Shop • Built with care</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
